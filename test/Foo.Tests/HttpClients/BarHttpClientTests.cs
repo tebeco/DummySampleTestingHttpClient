@@ -18,6 +18,7 @@ namespace Foo.HttpClients.Tests
             var httpClient = new HttpClient(handler);
             httpClient.BaseAddress = new Uri("https://localhost");
             var barHttpClient = new BarHttpClient(httpClient);
+            
             var result = await httpClient.GetStringAsync("/bar");
 
             Assert.Equal($"foo {bar}", result);
