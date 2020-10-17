@@ -19,7 +19,7 @@ namespace Foo.HttpClients.Tests
             httpClient.BaseAddress = new Uri("https://localhost");
             var barHttpClient = new BarHttpClient(httpClient);
             
-            var result = await httpClient.GetStringAsync("/bar");
+            var result = await barHttpClient.GetBarAsync();
 
             Assert.Equal($"foo {bar}", result);
         }
